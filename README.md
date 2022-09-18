@@ -143,3 +143,10 @@ docker stop <container_id>
 1. create a folder `.github`
 2. within .github folder create one more folder `workflows`
 3. in workflows folder create a file `main.yaml` (in this file there will be the github actions)
+
+## Setting Github Secrets:
+
+1. Open `main.yaml` file on github.
+2. duplicate the tab
+3. on second (duplicated) tab  -> Settings -> Secrets (on left side) -> Actions -> New Repository Secrets
+4. add values of  HEROKU_EMAIL, HEROKU_API_KEY & HEROKU_APP_NAME as a secrets
