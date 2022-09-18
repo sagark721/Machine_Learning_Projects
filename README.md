@@ -27,7 +27,7 @@ conda activate venv_test/
 pip install -r requirements.txt
 ```
 
-### Git Commands:
+## Git Commands:
 1. To add specific files into git:
 ```
     git add <file name 1> <file name 2>
@@ -69,4 +69,71 @@ git remote -v
 8. To check branch:
 ```
 git branch 
+```
+
+## Heroku Setup
+
+- To setup CI/CD pipeline in heroku we need 3 informations from Heroku:
+
+    1. HEROKU_EMAIL 
+    = sagark14121@gmail.comx
+    2. HEROKU_API_KEY 
+    = (Heroku dashboard -> Profile -> Account Setting -> (Scroll down) -> API Key) [e.g : a9569e3c-7313-4e7f-af73-6967633b9e8b]
+    3. HEROKU_APP_NAME
+    = App name from Heroku Dashboard [eg: checkreviews]
+
+
+## Docker File
+
+
+Create new docker file in vs code, type `Dockerfile` and hit enter.
+- Code written in docker file:
+```
+    FROM python:3.7
+    COPY . /app
+    WORKDIR /app
+    RUN pip install -r requirements.txt 
+    EXPOSE $PORT
+    CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+```
+> Note: Create `.dockerignore` file and the file names in it, To ignore the file which are not supposed to be added when creating Dockerfile.
+
+### DockerFile Code Description/Instructions:
+- Use `python 3.7` based operating system
+- Copy all the code inside `app` folder
+- Set working directory to `app`
+- Install `requirements.txt` file
+- Expose the port number, that will be sent from the environment variable
+- `CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app` , to run the application
+    #### With the help of `gunicorn` we will launch the application on ip address 0.0.0.0 which is local host ip address
+
+
+    #### app:app   -> in `app.py` file (flask application),`app` object i.e file_name:object_name
+
+
+### BUILD DOCKER IMAGE
+docker build -t <image_name>:<tag_name> <location of the docker file> . is used for location as the dockerfile is located in the present directory.
+```
+docker bulid -t <image_name>:<tag_name> .
+```
+> Note: image_name must be in lowercase only
+
+To list Docker images:
+```
+docker images
+```
+
+To run Docker image:
+```
+docker run -p 5000:5000 -e PORT=5000 <image id>
+```
+
+To check running containers in docker:
+```
+docker ps
+```
+
+To stop docker container:
+```
+docker stop <container_id>
 ```
