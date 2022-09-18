@@ -137,3 +137,9 @@ To stop docker container:
 ```
 docker stop <container_id>
 ```
+
+## Deployment on Heroku
+
+1. create a folder `.github`
+2. within .github folder create one more folder `workflows`
+3. in workflows folder create a file `main.yaml` (in this file there will be the github actions)
