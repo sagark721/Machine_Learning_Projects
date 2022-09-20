@@ -1,17 +1,32 @@
+from gettext import install
 from setuptools import setup
 from typing import List
 
-#Declaring the varibales to setup the 
+#Declaring the varibales to setup the function
+
+PROJECT_NAME='housing-price-predictor'
+VERSION="0.0.1"
+AUTHOR="Sagar Kanade"
+DESCRIPTION="This is first End to End Machine Learning Project"
+PACKAGES=['housing']
+REQUIREMENT_FILE_NAME='requirements.txt'
 
 def get_requirements_list() -> List[str]:
-    pass
+    """
+    Description: This function is going to return the list of requirement mentioned in requirements.txt file
+
+    return - This fucntion is going to return a list which contain name 
+    of libraries mentioned in requirements.txt file
+    """
+    with open(REQUIREMENT_FILE_NAME) as requirement_file:
+        return requirement_file.readlines()
 
 setup(
 
-name='housing-price-predictor',
-version="0.0.1",
-author="Sagar Kanade",
-description="This is first End to End Machine Learning Project",
-packages=['housing']
-install_requires=get_requirements_list()
+name=PROJECT_NAME,
+version=VERSION,
+author=AUTHOR,
+description=DESCRIPTION,
+packages=PACKAGES,
+requires=get_requirements_list()
 )
