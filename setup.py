@@ -1,5 +1,5 @@
 from gettext import install
-from setuptools import setup
+from setuptools import setup,find_packages
 from typing import List
 
 #Declaring the varibales to setup the function
@@ -19,7 +19,7 @@ def get_requirements_list() -> List[str]:
     of libraries mentioned in requirements.txt file
     """
     with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        return requirement_file.readlines()
+        return requirement_file.readlines().remove("-e .") #-e  . is removed because, below find_packages() is going to do the same what '-e .' is going to do
 
 setup(
 
@@ -27,6 +27,6 @@ name=PROJECT_NAME,
 version=VERSION,
 author=AUTHOR,
 description=DESCRIPTION,
-packages=PACKAGES,
-requires=get_requirements_list()
+packages=find_packages(),
+install_requires=get_requirements_list()
 )

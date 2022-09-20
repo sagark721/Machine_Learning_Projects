@@ -22,9 +22,26 @@ conda activate venv_test/
 ```
 
 
-### Create requirements.txt file and install requirements using:
+## Create requirements.txt file and install requirements using:
 ```
 pip install -r requirements.txt
+```
+```
+> Note: `-e .` 
+
+    - is used for example, 
+    
+    - You build websites using Django for numerous clients, and have also developed an in-house Django app called locations which you reuse across many projects, so you make it available on pip and version it.
+
+    - When you work on a project, you install the requirements as usual, which installs locations into site packages.
+
+    - But you soon discover that locations could do with some improvements.
+
+    - So you grab a copy of the locations repository and start making changes. Of course, you need to test these changes in the context of a Django project.
+
+    > Basically, we create libraries as required by project inside our project folder (i.e in housing folder), usually when requirements.txt is installed, all the libraries mentioned in requirements.txt will be installed. but suppose in future if we make some modification in the libraries contained in the housing folder then the updated version of libraries inside project folder will be installed when `-e .` is included in the requirements.txt file along with the libraries mentioned in requirements.txt file
+
+    >> `e` means all the packages (local) `.` means in the current directory (root folder).
 ```
 
 ## Git Commands:
@@ -71,7 +88,7 @@ git remote -v
 git branch 
 ```
 
-## Heroku Setup
+## Heroku Setup:
 
 - To setup CI/CD pipeline in heroku we need 3 informations from Heroku:
 
@@ -99,6 +116,8 @@ Create new docker file in vs code, type `Dockerfile` and hit enter.
 > Note: Create `.dockerignore` file and the file names in it, To ignore the file which are not supposed to be added when creating Dockerfile.
 
 ### DockerFile Code Description/Instructions:
+
+
 - Use `python 3.7` based operating system
 - Copy all the code inside `app` folder
 - Set working directory to `app`
@@ -120,7 +139,8 @@ Create new docker file in vs code, type `Dockerfile` and hit enter.
     - #### app:app means,  in `app.py` file (flask application),`app` object. i.e file_name(Module name):object_name
 
 
-### BUILD DOCKER IMAGE
+### BUILD DOCKER IMAGE:
+
 docker build -t <image_name>:<tag_name> <location of the docker file> . is used for location as the dockerfile is located in the present directory.
 ```
 docker bulid -t <image_name>:<tag_name> .
@@ -147,7 +167,7 @@ To stop docker container:
 docker stop <container_id>
 ```
 
-## Deployment on Heroku
+## Deployment on Heroku:
 
 1. create a folder `.github`
 2. within .github folder create one more folder `workflows`
@@ -163,5 +183,12 @@ docker stop <container_id>
 
 ## Create a `setup.py` file
 
-## Create a folder named, `housing`.
-- create `__init__.py` file in housing folder. `__init__.py` file will tell that housing folder is the python module/package so that this `housing` folder can be imported from any other file.
+```
+python setup.py install
+```
+
+## Structure of Project: 
+
+- Create a main project folder named, 'housing'.
+- Create `__init__.py` file in housing folder. `__init__.py` file will tell that housing folder is the python package.
+- Inside housing folder, create folders for `component,config,entity,exception,logger & pipeline`. create `__init__.py` file inside each folder.
