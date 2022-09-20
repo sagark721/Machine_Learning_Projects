@@ -105,10 +105,19 @@ Create new docker file in vs code, type `Dockerfile` and hit enter.
 - Install `requirements.txt` file
 - Expose the port number, that will be sent from the environment variable
 - `CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app` , to run the application
-    #### With the help of `gunicorn` we will launch the application on ip address 0.0.0.0 which is local host ip address
 
+    
 
-    #### app:app   -> in `app.py` file (flask application),`app` object i.e file_name:object_name
+    - #### With the help of `gunicorn` we will launch the application on ip address 0.0.0.0 which is local host ip address. gunicorn is built for linux based system, base image in Docker is Ubuntu based system so we need gunicorn there. gunicorn is webserver gateway interface, whenever user is trying to access url `gunicorn` will accept that user's request and map that request with the logic written in `app.py` file and return that response back to the client , inshort gunicorn helps to run our application.
+
+    - #### `--workers=4` means if there are 1000 requests each worker will handle 250 request (in order to increase efficency). (with paid subscription number of workers can be increased)
+
+    - #### `--bind 0.0.0.0` is the local ip address of machine
+
+    - #### PORT is the environment variable, whose value will be provided by the HEROKU (Environment varibale is the variable whose values is set by operating system)
+
+    
+    - #### app:app means,  in `app.py` file (flask application),`app` object. i.e file_name(Module name):object_name
 
 
 ### BUILD DOCKER IMAGE
@@ -150,3 +159,9 @@ docker stop <container_id>
 2. duplicate the tab
 3. on second (duplicated) tab  -> Settings -> Secrets (on left side) -> Actions -> New Repository Secrets
 4. add values of  HEROKU_EMAIL, HEROKU_API_KEY & HEROKU_APP_NAME as a secrets
+
+
+## Create a `setup.py` file
+
+## Create a folder named, `housing`.
+- create `__init__.py` file in housing folder. `__init__.py` file will tell that housing folder is the python module/package so that this `housing` folder can be imported from any other file.
