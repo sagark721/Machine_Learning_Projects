@@ -192,3 +192,5 @@ python setup.py install
 - Create a main project folder named, 'housing'.
 - Create `__init__.py` file in housing folder. `__init__.py` file will tell that housing folder is the python package.
 - Inside housing folder, create folders for `component,config,entity,exception,logger & pipeline`. create `__init__.py` file inside each folder.
+
+
