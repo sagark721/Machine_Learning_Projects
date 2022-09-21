@@ -195,7 +195,8 @@ python setup.py install
     
 ## Deployment Pipeline:
     
- ![image](https://user-images.githubusercontent.com/60654758/191495795-ea4ffedb-3709-4172-bfd4-874304d4599b.png)
+![Machine Learning Deployment Pipeline](https://user-images.githubusercontent.com/60654758/191496418-08fa7723-83cf-43f9-872d-4225c97c7422.png)
+
 
     
     
