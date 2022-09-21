@@ -192,6 +192,7 @@ python setup.py install
 - Create a main project folder named, 'housing'.
 - Create `__init__.py` file in housing folder. `__init__.py` file will tell that housing folder is the python package.
 - Inside housing folder, create folders for `component,config,entity,exception,logger & pipeline`. create `__init__.py` file inside each folder.
+<<<<<<< HEAD
 
 
 ## MLOps:
@@ -201,3 +202,14 @@ python setup.py install
 ## Data Versioning:
 1. To check if the *'data is modified'* we can create a `hash` value for data and save that value for future comparison and further create version of data
 2. Using `time-stamp` we can implement data versioning
+=======
+    
+## Deployment Pipeline:
+    
+![Machine Learning Deployment Pipeline](https://user-images.githubusercontent.com/60654758/191496418-08fa7723-83cf-43f9-872d-4225c97c7422.png)
+
+
+    
+    
+    
+>>>>>>> ef83e8e86cbfd0db4a2530b5c8b6fd76a4026d20
