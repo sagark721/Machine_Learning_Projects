@@ -194,3 +194,10 @@ python setup.py install
 - Inside housing folder, create folders for `component,config,entity,exception,logger & pipeline`. create `__init__.py` file inside each folder.
 
 
+## MLOps:
+
+- MLOps is about delivering/producing the updated model after data validation and model evaluation as soon as there is new data or modification in the code.
+
+## Data Versioning:
+1. To check if the *'data is modified'* we can create a `hash` value for data and save that value for future comparison and further create version of data
+2. Using `time-stamp` we can implement data versioning
