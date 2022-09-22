@@ -213,3 +213,18 @@ python setup.py install
     
     
 >>>>>>> ef83e8e86cbfd0db4a2530b5c8b6fd76a4026d20
+
+Install ipykernel
+```
+pip install ipykernel
+```
+
+install PyYAML
+```
+pip install PyYAML
+```
+
+Create new folder named `util` in project folder (i.e housing folder), This folder will be used to write The helper functions (e.g `read_yaml_file()`).
+
+
+Create a new folder named `constant` for *variables/hard coded values*
