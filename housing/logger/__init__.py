@@ -1,3 +1,4 @@
+
 import logging
 from datetime import datetime 
 import os
@@ -15,9 +16,4 @@ filemode="w",
 format='[%(asctime)s] %(name)s - %(levelname)s -%(message)s',
 level=logging.INFO
 )
-
-
-
-
-
 
