@@ -1,4 +1,3 @@
-
 from logging import exception
 from housing.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,\
     ModelTrainerConfig,ModelEvaluationConfig,ModelPusherConfig,TrainingPipelineConfig
