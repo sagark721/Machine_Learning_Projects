@@ -229,6 +229,7 @@ Create new folder named `util` in project folder (i.e housing folder), This fold
 
 Create a new folder named `constant` for *variables/hard coded values*
 
+## High level Workflow:
 
 ![high level workflow](https://user-images.githubusercontent.com/60654758/192711284-355d5fdc-dfe6-48e6-bb99-b3c888532ecf.jpg)
 
