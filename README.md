@@ -228,3 +228,6 @@ Create new folder named `util` in project folder (i.e housing folder), This fold
 
 
 Create a new folder named `constant` for *variables/hard coded values*
+
+high level workflow.jpg
+
