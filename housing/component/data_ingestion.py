@@ -15,7 +15,7 @@ class DataIngestion:
 
     def __init__(self,data_ingestion_config:DataIngestionConfig):
         try:
-            logging.info(f"{'='*20}Data Ingestion Log Started.{'='*20}")
+            logging.info(f"\n\n{'='*20}Data Ingestion Log Started.{'='*20}\n")
             self.data_ingestion_config=data_ingestion_config 
         except Exception as e:
             raise HousingException(e,sys)
@@ -139,7 +139,7 @@ class DataIngestion:
 
 
     def __del__(self):
-        logging.info(f"{'='*20} Data Ingestion Log Completed. {'='*20} \n\n")
+        logging.info(f"\n\n{'='*20} Data Ingestion Log Completed. {'='*20} \n")
 
 
 

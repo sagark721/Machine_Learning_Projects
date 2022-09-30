@@ -26,6 +26,7 @@ class DataValidation:
         data_ingestion_artifact:DataIngestionArtifact,
         schema_file_path:str = SCHEMA_FILE_PATH ):
         try:
+            logging.info(f"\n\n{'='*20} Data Validation Log Started. {'='*20} \n\n")
             self.data_validation_config=data_validation_config
             self.data_ingestion_artifact=data_ingestion_artifact
             self.schema_file_path=schema_file_path
@@ -274,9 +275,15 @@ class DataValidation:
 
             logging.info(f"Data validation artifact: {data_validation_artifact}")
 
+            return data_validation_artifact
+
 
 
         except Exception as e:
             raise HousingException (e,sys) from e 
+
+    
+    def __del__(self):
+        logging.info(f"\n\n{'='*20} Data Validation Log Completed. {'='*20} \n\n")
 
 
