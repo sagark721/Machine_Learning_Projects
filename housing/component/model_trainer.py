@@ -9,6 +9,36 @@ from housing.util.util import *
 from housing.entity.model_factory import *
 
 
+
+
+class HousingEstimatorModel:
+    def __init__(self, preprocessing_object, trained_model_object):
+        """ TrainedModel Constructor 
+        preprocessing_object = preprocessing_object
+        trained_model_object = trained_model_object
+        """
+        self.preprocessing_object=preprocessing_object
+        self.trained_model_object=trained_model_object
+
+    def predict(self,X):
+        """ 
+        This function accepts raw input and then transforms raw input using preprocessing_object
+        which guarantees (ensures) that the inputs are in the same format as the training data
+        at last it performs prediction on transformed features
+         """
+
+        transformed_feature = self.preprocessing_object.tranform(X)
+        return self.trained_model_object.predict(transformed_feature)
+
+    
+    def __repr__(self):
+        return f"{type(self.trained_model_object).__name__}()"
+
+    def __str__(self):
+         return f"{type(self.trained_model_object).__name__}()"
+
+
+
 class Model_Trainer:
     
 
@@ -22,6 +52,7 @@ class Model_Trainer:
             raise HousingException (e,sys) from e
 
     def initiate_model_trainer(self)-> ModelTrainerArtifact:
+        
         try:
             logging.info(f"Loading transformed training dataset")
             transformed_train_file_path = self.data_transformation_artifact.transformed_train_file_path
