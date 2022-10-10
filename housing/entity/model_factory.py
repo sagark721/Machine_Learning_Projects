@@ -7,6 +7,7 @@ import numpy as np
 import yaml
 import os,sys
 import importlib
+from typing import List
 
 from housing.exception import HousingException
 
@@ -90,7 +91,7 @@ def evaluate_regression_model(model_list:list,X_train:np.ndarray,y_train:np.ndar
             #Logging all important metric
             logging.info(f"{'>>'*30} Score {'<<'*30}")
             logging.info(f"Train Score\t\t Test Score\t\t Average Score")
-            logging.info(f"{train_acc}\t\t {test_acc}\t\t {model_accuracy}")
+            logging.info(f"{np.round(train_acc,2)}\t\t {np.round(test_acc,2)}\t\t {np.round(model_accuracy,2)}")
 
             logging.info(f"{'>>'*30} Loss {'<<'*30}")
             logging.info(f"Diff train test accuracy: [{diff_test_train_accuracy}].")
@@ -108,7 +109,8 @@ def evaluate_regression_model(model_list:list,X_train:np.ndarray,y_train:np.ndar
                                                             test_rmse=test_rmse,
                                                             train_accuracy=train_acc,
                                                             test_accuracy=test_acc,
-                                                            index_number=index_number)
+                                                            index_number=index_number,
+                                                            model_accuracy=model_accuracy)
 
                 logging.info(f"Acceptable model found {metric_info_artifact}.")
             index_number +=1
