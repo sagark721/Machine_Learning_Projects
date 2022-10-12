@@ -80,8 +80,8 @@ def evaluate_regression_model(model_list:list,X_train:np.ndarray,y_train:np.ndar
             test_acc= r2_score(y_test,y_test_pred)
 
             #Calculating mean squared error on training and testing dataset
-            train_rmse= mean_squared_error(y_train,y_train_pred)
-            test_rmse=mean_squared_error(y_test,y_test_pred)
+            train_rmse= np.sqrt(mean_squared_error(y_train,y_train_pred))
+            test_rmse=np.sqrt(mean_squared_error(y_test,y_test_pred))
 
 
             #Calculating Harmonic mean of train_accuracy and test_accuracy
